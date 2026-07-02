@@ -1,0 +1,238 @@
+%% ---------------------------------
+%% | Information about the thesis  |
+%% ---------------------------------
+
+%% -------------------------------
+%% |  Information for PDF file   |
+%% -------------------------------
+\hypersetup{
+	pdfauthor={\myname},
+	pdftitle={\mytitle},
+	pdfsubject={},
+	pdfkeywords={\mykeywords}
+}
+
+
+%% --------------------------------
+%% | Settings for word separation |
+%% --------------------------------
+% Help for separation:
+% In german package the following hints are additionally available:
+% "- = Additional separation
+% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
+% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
+% "= = Hyphenation with separation before and after
+% "" = Separation without a hyphenation (e.g. und/""oder)
+
+% Describe separation hints here:
+\hyphenation{
+} 
+
+
+\LetLtxMacro{\todoside}{\todo}
+\renewcommand{\todo}[2][]{\todoside[inline, #1]{#2}}
+
+% Listen
+\newcounter{RRR}
+\newenvironment{Rlist}{
+  \begin{list}{(\Roman{RRR})}{
+      \usecounter{RRR}\setlength{\leftmargin}{8mm}\setlength{\labelsep}{2mm}
+    }
+}{\end{list}}
+
+\newcounter{rrr}
+\newenvironment{rlist}{
+  \begin{list}{(\roman{rrr})}{
+      \usecounter{rrr}\setlength{\leftmargin}{8mm}\setlength{\labelsep}{2mm}
+    }
+}{\end{list}}
+
+\newcounter{zzz}
+\newenvironment{zlist}{
+  \begin{list}{(\arabic{zzz})}{
+      \usecounter{zzz}\setlength{\leftmargin}{8mm}\setlength{\labelsep}{2mm}
+    }
+}{\end{list}}
+
+\newcounter{abc}
+\newenvironment{alist}{
+  \begin{list}{(\alph{abc})}{
+      \usecounter{abc}\setlength{\leftmargin}{8mm}\setlength{\labelsep}{2mm}
+    }
+}{\end{list}}
+
+% Additional Math Symbols
+% many provided by physics package
+\newcommand{\nM}{\mathbb}
+\newcommand{\nR}{\mathbb{R}}
+\newcommand{\nN}{\mathbb{N}}
+\newcommand{\nZ}{\mathbb{Z}}
+\newcommand{\nQ}{\mathbb{Q}}
+\newcommand{\nC}{\mathbb{C}}
+\newcommand{\nK}{\mathbb{K}}
+\newcommand{\nF}{\mathbb{F}}
+\newcommand{\nullel}{\mathcal{O}}
+\newcommand{\einsel}{\mathds{1}}
+
+\newcommand{\summe}[2]{\sum\limits_{#1}^{#2}}
+
+\newcommand{\psumme}{\sum\limits_{n=0}^{\infty}}
+
+
+\newcommand{\limesn}{\lim\limits_{n\to\infty}}
+\newcommand{\limesx}{\lim\limits_{x\to\infty}}
+\newcommand{\limesp}[1]{\lim\limits_{#1\to\infty}}
+\newcommand{\limespfeil}[1]{\xrightarrow[#1\to\infty]{}}
+\newcommand{\limesto}[2]{\lim\limits_{#1 \to #2}}
+\newcommand{\limes}[1]{\lim\limits_{#1}}
+\newcommand{\limespfeilto}[1]{\xrightarrow[#1]{}}
+\newcommand{\limesw}[1]{\xrightarrow[#1]{W}}
+
+
+
+
+
+\newcommand{\ddx}{\dv{x}}
+\newcommand{\ddt}[1]{\dv{#1}{t}}
+\newcommand{\ddxn}[1]{\dv[n]{#1}{x}} %{\frac{\mathrm{d}^{#1}}{\mathrm{d} x^{#1}}}
+\newcommand{\bint}[2]{\int\limits_{#1}^{#2}}
+\newcommand{\aint}[1]{\int\limits_{#1}^{}}
+\newcommand{\divtxt}{\text{div }}
+\newcommand{\rottxt}{\text{rot }}
+
+\newcommand{\diag}[1]{\mathrm{diag}\left(#1\right)}
+
+\newcommand{\LL}{\mathcal{L}}
+
+\newcommand{\gradtxt}{\text{grad} \ }
+
+% for double arrows a la chef
+% adapt line thickness and line width, if needed
+%\tikzstyle{vecArrow} = [thick, ->, >=stealth,
+%   double distance=7pt, shorten >= 5.5pt,
+%   postaction = {draw,line width=7pt, white,shorten >= 4.5pt}]
+\tikzstyle{vecArrow} = [thick, ->, >=stealth]
+
+\tikzstyle{module} = [rectangle, draw, fill=kit-green50, 
+      text width=8em, text centered, rounded corners]
+\tikzstyle{module-background} = [rectangle, draw, fill=kit-green15, rounded corners]
+      
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+      minimum height=2em]
+\tikzstyle{tracks} = [draw, -latex']
+\tikzstyle{hits} = [draw=red!60, -latex', fill=red!60]
+
+\tikzset{ header node/.style = {
+    text depth    = +0pt,
+    fill          = white,
+    draw},
+  header/.style = {%
+    inner ysep = +1.5em,
+    append after command = {
+      \pgfextra{\let\TikZlastnode\tikzlastnode}
+      node [header node] (header-\TikZlastnode) at (\TikZlastnode.north) {#1}
+    }
+  }
+}
+
+\lstdefinestyle{customP}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=false,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=Python,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{kit-green70},
+  commentstyle=\itshape\color{kit-blue70},
+  identifierstyle=\color{black},
+  stringstyle=\color{kit-orange100},
+}
+
+\lstdefinestyle{customC}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=false,
+  %frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{kit-green70},
+  commentstyle=\itshape\color{kit-blue70},
+  identifierstyle=\color{black},
+  stringstyle=\color{kit-orange100},
+}
+
+\definecolor{light-gray}{gray}{0.98}
+
+% the space reserved between for the ``In'' numbers and the code
+% after http://tex.stackexchange.com/questions/223465/ipython-notebook-cells-with-listings
+\newlength\inwd
+\setlength\inwd{1.6cm}
+
+\newcounter{ipythcntr}
+
+\newtcblisting{inputipynb}[1][\theipythcntr]{
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0.2pt,
+  colback=light-gray,
+  listing only,
+  listing options={
+    style=customP
+  },
+  top=-6pt,
+  bottom=-6pt,
+  left=4pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{kit-blue100},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ] 
+      at (frame.north west)
+      {\stepcounter{ipythcntr}In [#1]:};
+  }
+}
+
+\newtcblisting{outputipynb}[1][\theipythcntr]{
+  enlarge left by=\inwd,
+  width=\linewidth-\inwd,
+  enhanced,
+  boxrule=0pt,
+  frame hidden,
+  colback=white,
+  listing only,
+  listing options={
+    basicstyle=\footnotesize\ttfamily,
+  },
+  top=-6pt,
+  bottom=-6pt,
+  left=4pt,
+  overlay={
+    \node[
+      anchor=north east,
+      text width=\inwd,
+      font=\footnotesize\ttfamily\color{kit-blue100},
+      inner ysep=2mm,
+      inner xsep=0pt,
+      outer sep=0pt
+      ] 
+      at (frame.north west)
+      {Out [#1]:};
+  }
+}
+
+\sisetup{
+      inter-unit-product=\cdot,
+      exponent-product=\cdot,
+      retain-explicit-plus=true,
+      separate-uncertainty=true,
+      multi-part-units=single
+}
+
+\floatsetup[table]{capposition=top}

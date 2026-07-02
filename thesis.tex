@@ -1,0 +1,63 @@
+\documentclass[english]{class/thesisclass}
+% Based on thesisclass.cls of Timo Rohrberg, 2009 and Nils Braun, 2018
+
+\newcommand{\isi}[1]{{\color{red}[#1]}}
+\renewcommand{\grad}{^\circ}
+\newcommand{\kl}{$KL_\text{div}$}
+
+\definecolor{bronze}{HTML}{A63F1E}
+\definecolor{emerald}{HTML}{007836}
+\definecolor{copper}{RGB}{215, 118, 0}
+
+
+\newcommand{\myname}{Marc-Philipp Thomas}
+\newcommand{\mytitle}{Using ACTS for Track Fitting in the Belle~II Experiment}
+\newcommand{\mytitlegerman}{Fast Simulation und Validierung des Time of Propagation Detektors am Belle~II Experiment}
+\newcommand{\mykeywords}{Keywords}
+\newcommand{\myinstitute}{Institut für Experimentelle Teilchenphysik (ETP)}
+\newcommand{\myinstituteen}{Institute of Experimental Particle Physics (ETP)}
+\newcommand{\mythesisclass}{Masterthesis}
+
+\newcommand{\reviewerone}{Prof. Dr. Torben Ferber}
+\newcommand{\reviewertwo}{Prof. Dr. Jan Kieseler}
+\newcommand{\advisor}{Dr. Giacomo De Pietro}
+
+\newcommand{\timestart}{\printdate{2025-08-17}}
+\newcommand{\timeend}{\today}
+\newcommand{\submissiontime}{\today}
+
+\newcommand{\etpnumber}{20XX-XX}
+
+\input{class/prefix}
+
+\begin{document}
+  \selectlanguage{english}
+  %Titelseite und Inhaltsverzeichnis
+  \pagenumbering{alph}
+  \frontmatter
+  \pagenumbering{Roman}
+  \input{class/titlepage}
+  \begin{otherlanguage}{ngerman}
+    \input{class/declaration}
+  \end{otherlanguage}
+\include{chapters/disclaimer}
+  \tableofcontents
+
+  % Hauptteil
+  \mainmatter
+%  chapter Introduction
+
+\include{chapters/introduction}
+
+
+
+\include{chapters/conclusion}
+  % Anhang
+  \appendix
+  \bibliographystyle{class/utphys}
+% \bibliographystyle{ieeetr}
+  \bgroup\let\addcontentsline=\nocontentsline\bibliography{class/bibliography}\egroup
+
+\end{document}
+  \selectlanguage{english}
+
